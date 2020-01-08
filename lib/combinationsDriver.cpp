@@ -4,9 +4,20 @@
 
 using namespace std;
 
+void display_combination(vector<vector<int>> combinations) {
+	for(auto comb: combinations) {
+		for(auto val: comb)
+			cout << val << " ";
+		cout << endl;
+	}
+}
+
+
 int main() {
-	int more_nums[] = {1, 2, 3, 4, 5, 6, 7};
-	get_combinations(more_nums, sizeof(more_nums) / sizeof(int), 3);
-	
+	vector<int> more_nums = {1, 2, 3, 4, 5};
+	//print_combinations(more_nums, 3);
+	vector<vector<int>> combinations = get_combinations(more_nums, 3);
+	display_combination(combinations);
+
 	return 0;
 }
